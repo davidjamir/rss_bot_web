@@ -1,0 +1,16 @@
+name: Trigger Vercel Job
+
+on:
+  schedule:
+    - cron: "2-59/5 * * * *"   # mỗi 5 phút (min), lệch 2 phút
+  workflow_dispatch:
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Vercel Function
+        run: |
+          curl -fsS --retry 3 --retry-delay 5 --max-time 30 \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
+            https://rss-bot-web.vercel.app/api/cron

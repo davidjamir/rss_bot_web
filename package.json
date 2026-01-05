@@ -1,0 +1,16 @@
+{
+  "name": "rss_bot_web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@upstash/redis": "^1.36.0",
+    "axios": "^1.13.2",
+    "rss-parser": "^3.13.0"
+  }
+}
