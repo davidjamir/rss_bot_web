@@ -1,8 +1,12 @@
 name: Trigger Vercel Job
 
+concurrency:
+  group: vercel-cron
+  cancel-in-progress: true
+
 on:
   schedule:
-    - cron: "2-59/5 * * * *"   # mỗi 5 phút (min), lệch 2 phút
+    - cron: "*/5 * * * *"   # mỗi 5 phút (min), lệch 2 phút
   workflow_dispatch:
 
 jobs:
